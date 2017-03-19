@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	    http://www.springframework.org/schema/context
+	    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <context:component-scan base-package="com.firefly.web.action.**.*"/>
+    <bean id="propertyConfigurer"
+          class="com.firefly.common.DecryptPropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>file:${resources.config.path}/jdbc.properties</value>
+                <value>file:${resources.config.path}/app.properties</value>
+            </list>
+        </property>
+        <property name="ignoreUnresolvablePlaceholders" value="true" />
+    </bean>
+
+	<bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+		<property name="suffix" value=".ftl" />
+		<property name="contentType" value="text/html;charset=UTF-8" />
+		<!-- 此变量值为pageContext.request, 页面使用方法：rc.contextPath -->
+		<property name="requestContextAttribute" value="rc" />
+	</bean>
+
+	<!-- 上传文件相关 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="UTF-8"/>
+		<property name="maxUploadSize" value="10485760000"/>
+		<property name="maxInMemorySize" value="40960"/>
+	</bean>
+
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
+
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
+				<bean class="org.springframework.http.converter.StringHttpMessageConverter" />
+				<!--json转换器 -->
+			</list>
+		</property>
+	</bean>
+</beans>

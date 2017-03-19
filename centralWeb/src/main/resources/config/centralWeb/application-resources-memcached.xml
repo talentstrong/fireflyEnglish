@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+       default-autowire="byName">
+    <bean id="memcacheFactory" class="com.firefly.cache.memcache.MemcacheProxyFactory"
+          factory-method="configure" destroy-method="close">
+        <constructor-arg value="file:${resources.config.path}/memcached-config.xml"/>
+    </bean>
+    <bean id="dataCache" factory-bean="memcacheFactory"
+          factory-method="findClient">
+        <constructor-arg value="data_pool"/>
+    </bean>
+    <bean id="sessionCache" factory-bean="memcacheFactory"
+          factory-method="findClient">
+        <constructor-arg value="session_pool"/>
+    </bean>
+</beans>
