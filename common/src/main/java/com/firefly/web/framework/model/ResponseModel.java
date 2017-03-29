@@ -9,8 +9,5 @@ import lombok.Data;
 @Data
 public class ResponseModel implements Serializable {
 
-    /**
-     * 客户信息
-     */
-    private CustomerDto customer;
+
 }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>微信授权</title>
+</head>
+<body style="font-size:50px">
+<div id="nickName"></div>
+<div id="addr"></div>
+<div id="sex"></div>
+<img id="headimg" src="" />
+</body>
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/wx.js"></script>
+<script>
+    $(function () {
+        var code = getUrlParam("code");
+        var state = getUrlParam("state");
+        console.log(code + "_" + state);
+        var result = common.submitWeixinAuth(state, code).responseJSON;
+        $("#nickName").html(result.nickName);
+        $("#addr").html(result.country + " " + result.province + " " + result.city);
+        $("#sex").html(result.sex);
+        $("#headimg").attr('src', result.headimgUrl);
+        console.log(result);
+    });
+
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+        if (r != null) return unescape(r[2]); return null; //返回参数值
+    }
+</script>
+</html>

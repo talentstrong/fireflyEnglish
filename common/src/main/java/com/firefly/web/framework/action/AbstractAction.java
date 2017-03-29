@@ -95,9 +95,7 @@ public abstract class AbstractAction<O extends Object, T extends ActionContext, 
             R result = doBiz(inputVo, pageCookie, session, customer);
 
             afterBiz(request, response, inputVo, pageCookie, session, result);
-            if (null == result.getCustomer()) {
-                result.setCustomer(customer);
-            }
+
             o = buildOutput(inputVo, result);
         } else {
             o = buildRedirectToLoginPageOutput(request, response, inputVo);
