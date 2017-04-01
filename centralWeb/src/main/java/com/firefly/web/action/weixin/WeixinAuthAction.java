@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @Log4j
+// 获取用户的auth信息,并完成用户创建
 public class WeixinAuthAction extends SimpleJsonAction<WeixinAuthInputVo, WeixinAuthModel> {
     private static final String PAGE_URL_PARTTEN = "/weixin/auth";
 
@@ -34,7 +35,6 @@ public class WeixinAuthAction extends SimpleJsonAction<WeixinAuthInputVo, Weixin
     protected WeixinAuthModel doBiz(WeixinAuthInputVo inputVo, PageCookie cookie, PageSession session, CustomerDto customer) throws Exception {
         WeixinAuthModel result = new WeixinAuthModel();
 
-        System.out.println("****" + inputVo);
         Object sessionDataObj = session.getAttribute(SessionKey.WEIXIN_AUTH_STATUS);
         if (sessionDataObj == null) {
             result.setAuthState(0);
@@ -66,7 +66,6 @@ public class WeixinAuthAction extends SimpleJsonAction<WeixinAuthInputVo, Weixin
         } else {
             result.setSex("");
         }
-        System.out.println(userInfo);
         return result;
     }
 

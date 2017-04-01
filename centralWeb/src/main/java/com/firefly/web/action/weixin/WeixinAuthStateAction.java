@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @Log4j
+// 生成获取用户accessToken时用到的state
 public class WeixinAuthStateAction extends SimpleJsonAction<JsonRequestInputVo, WeixinAuthStateModel> {
     private static final String PAGE_URL_PARTTEN = "/weixin/authState";
 

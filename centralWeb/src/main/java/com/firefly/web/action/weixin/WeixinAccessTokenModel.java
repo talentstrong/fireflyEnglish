@@ -12,8 +12,4 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper = false)
 public class WeixinAccessTokenModel extends BaseJsonModel {
     private String accessToken;
-
-    public static void main(String[] args) {
-        System.out.println(URLEncoder.encode("http://talentstrong.iok.la/weixin/authorization.html"));
-    }
 }

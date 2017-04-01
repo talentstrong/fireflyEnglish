@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @Log4j
+// 获取用户的accessToken
 public class WeixinAccessTokenAction extends BaseJsonAction<ActionContext, JsonRequestInputVo, WeixinAccessTokenModel> implements InitializingBean {
     private static final String PAGE_URL_PARTTEN = "/weixin/accessToken.htm";
 
