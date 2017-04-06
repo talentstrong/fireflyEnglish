@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.firefly.service.dao.CampApplyDao">
+
+	<resultMap id="CampApply" type="com.firefly.model.CampApply">
+		<result property="id" column="id"/>
+		<result property="userId" column="userId"/>
+		<result property="mobile" column="mobile"/>
+		<result property="weixinAccount" column="weixinAccount"/>
+		<result property="name" column="name"/>
+		<result property="childAge" column="childAge"/>
+		<result property="canSpeakEnglish" column="canSpeakEnglish"/>
+		<result property="createTime" column="createTime"/>
+		<result property="updateTime" column="updateTime"/>
+	</resultMap>
+
+	<sql id="ActivityLevel_columns">
+		<![CDATA[
+			id,
+			userId,
+			mobile,
+			weixinAccount,
+			name,
+			childAge,
+			canSpeakEnglish,
+			createTime,
+			updateTime
+		]]>
+	</sql>
+
+	<insert id="createCampApply" parameterType="com.firefly.model.CampApply">
+		<selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+		insert into campApply
+		(mobile,weixinAccount,name,childAge,canSpeakEnglish,createTime,updateTime)
+		VALUES
+		(#{mobile},#{weixinAccount},#{name},#{childAge},#{canSpeakEnglish},now(),now())
+	</insert>
+</mapper>
+
