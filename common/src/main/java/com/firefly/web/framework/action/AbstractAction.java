@@ -7,12 +7,12 @@ import java.util.UUID;
 
 import com.firefly.cache.CacheProxy;
 import com.firefly.dto.CustomerDto;
-import com.firefly.utils.GuidUtil;
 import com.firefly.utils.IpUtil;
 import com.firefly.web.framework.ActionContext;
 import com.firefly.web.framework.ActionContextContainer;
 import com.firefly.web.framework.PageCookie;
 import com.firefly.web.framework.PageSession;
+import com.firefly.utils.GuidUtil;
 import com.firefly.web.framework.inputVo.RequestInputVo;
 import com.firefly.web.framework.model.BaseSessionKeys;
 import com.firefly.web.framework.model.ResponseModel;

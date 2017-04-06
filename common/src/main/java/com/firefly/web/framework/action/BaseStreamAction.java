@@ -10,14 +10,13 @@ import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.lang.IllegalClassException;
-import org.springframework.web.servlet.ModelAndView;
-
 import com.firefly.web.framework.ActionContext;
 import com.firefly.web.framework.PageCookie;
 import com.firefly.web.framework.PageSession;
 import com.firefly.web.framework.inputVo.RequestInputVo;
 import com.firefly.web.framework.model.BaseStreamModel;
+import org.apache.commons.lang.IllegalClassException;
+import org.springframework.web.servlet.ModelAndView;
 
 public abstract class BaseStreamAction<StreamDataType, V extends RequestInputVo, R extends BaseStreamModel<StreamDataType>>
         extends AbstractAction<ModelAndView, ActionContext, V, R> {

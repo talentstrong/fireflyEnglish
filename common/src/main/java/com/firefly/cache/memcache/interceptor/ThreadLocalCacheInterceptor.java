@@ -1,8 +1,7 @@
 package com.firefly.cache.memcache.interceptor;
 
-import org.apache.log4j.Logger;
-
 import com.firefly.common.CacheInThread;
+import org.apache.log4j.Logger;
 
 
 /**

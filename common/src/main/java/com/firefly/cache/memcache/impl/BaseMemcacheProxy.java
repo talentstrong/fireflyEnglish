@@ -6,12 +6,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.apache.log4j.Logger;
-import org.springframework.util.Assert;
-
-import com.firefly.cache.memcache.AbstractMemcacheProxy;
 import com.firefly.cache.memcache.conf.MemcachePoolConfig;
 import com.firefly.cache.memcache.exception.MemcacheException;
+import com.firefly.cache.memcache.AbstractMemcacheProxy;
+import org.apache.log4j.Logger;
+import org.springframework.util.Assert;
 
 public class BaseMemcacheProxy extends AbstractMemcacheProxy {
 

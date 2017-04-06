@@ -2,11 +2,13 @@ package com.firefly.cache.memcache;
 
 import java.util.Map;
 
+import com.firefly.cache.memcache.interceptor.ThreadLocalCacheInterceptor;
+
 /**
  * <pre>
  * Memcache拦截器，主要用来对memcache的操作进行拦截，做额外的工作。
  * 比如本地缓存拦截器:<code>ThreadLocalCacheInterceptor</code>,用来做memcache的线程级缓存。
- * 该拦截器实现采用责任链模式进行设计，实现参照{@link com.firefly.cache.memcache.interceptor.ThreadLocalCacheInterceptor}}:
+ * 该拦截器实现采用责任链模式进行设计，实现参照{@link ThreadLocalCacheInterceptor}}:
  * 
  * spring配置:
  * <bean id="memcacheFactory" class="com.firefly.cache.memcache.MemcacheProxyFactory" factory-method="configure" destroy-method="close">

@@ -7,14 +7,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
-
 import com.firefly.cache.CacheProxy;
 import com.firefly.cache.memcache.exception.MemcacheException;
-import com.firefly.cache.memcache.exception.MemcacheInitException;
-import com.firefly.cache.memcache.impl.InterceptorMemcacheProxy;
-import com.firefly.cache.memcache.interceptor.CoreInterceptor;
 import com.firefly.cache.memcache.interceptor.EmptyInterceptor;
+import com.firefly.cache.memcache.exception.MemcacheInitException;
+import com.firefly.cache.memcache.interceptor.CoreInterceptor;
+import org.apache.log4j.Logger;
+
+import com.firefly.cache.memcache.impl.InterceptorMemcacheProxy;
 
 /**
  * 該類是memcache的工廠類，主要功能如下:</br>

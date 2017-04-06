@@ -1,7 +1,5 @@
 package com.firefly.service.framework;
 
-import com.firefly.service.framework.ServiceResultCode;
-
 public class AppParamException extends RuntimeException {
 
     /**

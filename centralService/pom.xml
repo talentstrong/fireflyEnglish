@@ -11,5 +11,11 @@
 
     <artifactId>centralService</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>com.fireflyEnglish</groupId>
+            <artifactId>centralModel</artifactId>
+            <version>${centralVersion}</version>
+        </dependency>
+    </dependencies>
 </project>

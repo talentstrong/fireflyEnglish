@@ -4,13 +4,13 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
-
-import com.danga.MemCached.SockIOPool;
 import com.firefly.cache.memcache.conf.MemcacheConfig;
 import com.firefly.cache.memcache.conf.MemcachePoolConfig;
 import com.firefly.cache.memcache.exception.MemcacheInitException;
 import com.firefly.cache.memcache.impl.BaseMemcacheProxy;
+import org.apache.log4j.Logger;
+
+import com.danga.MemCached.SockIOPool;
 
 /**
  * Memcache 客户端管理器，负责客户端的配置连接初始化，缓存客户端，以及销毁连接

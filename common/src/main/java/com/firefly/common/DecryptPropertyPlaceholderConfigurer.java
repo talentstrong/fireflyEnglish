@@ -11,15 +11,15 @@ public class DecryptPropertyPlaceholderConfigurer extends PropertyPlaceholderCon
         String s = props.getProperty(placeholder);
 
         if (placeholder != null && s != null) {
-            if (placeholder.startsWith("jdbc")) {
-                if(placeholder.endsWith(".username")){
-                    s = Encrypter.decrypt(s);
-                }
-
-                if(placeholder.endsWith(".password")){
-                    s = Encrypter.decrypt(s);
-                }
-            }
+//            if (placeholder.startsWith("jdbc")) {
+//                if(placeholder.endsWith(".username")){
+//                    s = Encrypter.decrypt(s);
+//                }
+//
+//                if(placeholder.endsWith(".password")){
+//                    s = Encrypter.decrypt(s);
+//                }
+//            }
         }
         return s;
     }

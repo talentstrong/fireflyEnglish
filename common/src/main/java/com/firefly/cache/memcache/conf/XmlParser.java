@@ -1,9 +1,8 @@
 package com.firefly.cache.memcache.conf;
 
+import com.firefly.cache.memcache.exception.MemcacheInitException;
 import org.apache.commons.lang.StringUtils;
 import org.dom4j.Element;
-
-import com.firefly.cache.memcache.exception.MemcacheInitException;
 
 public class XmlParser {
 

@@ -6,12 +6,12 @@ import java.text.MessageFormat;
 import java.util.Map;
 
 import com.firefly.dto.CustomerDto;
-import com.firefly.utils.HttpUtil;
-import com.firefly.web.constant.SessionKey;
-import com.firefly.web.constant.WeixinApiUrl;
 import com.firefly.web.framework.PageCookie;
 import com.firefly.web.framework.PageSession;
 import com.firefly.web.framework.action.SimpleJsonAction;
+import com.firefly.utils.HttpUtil;
+import com.firefly.web.constant.SessionKey;
+import com.firefly.web.constant.WeixinApiUrl;
 import com.google.common.collect.Maps;
 import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Value;
